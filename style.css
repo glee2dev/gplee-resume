@@ -118,26 +118,30 @@ body {
 
     /* Content Wrapper */
     .content-wrapper {
-      display: grid;
-      grid-template-columns: 1fr;
-      min-height: 0;
       position: relative;
+      overflow: hidden;
     }
 
     /* Resume Content Styles */
     .resume-content {
-      grid-row: 1;
-      grid-column: 1;
       opacity: 1;
-      visibility: visible;
-      transition: opacity 0.3s ease-in-out;
+      transform: translateX(0);
+      transition: all 0.3s ease-in-out;
+      position: relative;
     }
 
     .resume-content.hidden {
       opacity: 0;
-      visibility: hidden;
+      transform: translateX(-100%);
       position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
       pointer-events: none;
+    }
+
+    .resume-content.hidden + .resume-content:not(.hidden) {
+      transform: translateX(0);
     }
 
     .section {

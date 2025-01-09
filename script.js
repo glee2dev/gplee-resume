@@ -26,8 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Language switching functionality
   const tabButtons = document.querySelectorAll('.tab-button');
   const resumeContents = document.querySelectorAll('.resume-content');
+  let isTransitioning = false;
 
   function switchLanguage(lang) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+
     // Update button states
     tabButtons.forEach(button => {
       button.classList.toggle('active', button.dataset.lang === lang);
@@ -36,26 +40,62 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reset scroll position
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // First hide all content
-    resumeContents.forEach(content => {
-      content.classList.add('hidden');
-    });
+    // Get current and next content
+    const currentContent = Array.from(resumeContents).find(content => !content.classList.contains('hidden'));
+    const nextContent = Array.from(resumeContents).find(content => content.dataset.lang === lang);
 
-    // Then show the selected content after a small delay
-    setTimeout(() => {
-      resumeContents.forEach(content => {
-        if (content.dataset.lang === lang) {
-          content.classList.remove('hidden');
-          // Re-trigger section animations
-          content.querySelectorAll('.section').forEach(section => {
-            section.classList.remove('active');
-            requestAnimationFrame(() => {
-              section.classList.add('active');
-            });
-          });
-        }
+    if (currentContent === nextContent) {
+      isTransitioning = false;
+      return;
+    }
+
+    // Reset section animations for next content
+    if (nextContent) {
+      nextContent.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
       });
-    }, 300); // Delay matches CSS transition duration
+    }
+
+    // Switch content with transform transitions
+    if (currentContent) {
+      currentContent.style.transform = 'translateX(-100%)';
+      currentContent.style.opacity = '0';
+      
+      setTimeout(() => {
+        currentContent.classList.add('hidden');
+        currentContent.style.transform = '';
+        
+        if (nextContent) {
+          nextContent.classList.remove('hidden');
+          nextContent.style.transform = 'translateX(0)';
+          nextContent.style.opacity = '1';
+          
+          // Trigger section animations
+          setTimeout(() => {
+            nextContent.querySelectorAll('.section').forEach(section => {
+              requestAnimationFrame(() => {
+                section.classList.add('active');
+              });
+            });
+          }, 50);
+        }
+        
+        isTransitioning = false;
+      }, 300);
+    } else if (nextContent) {
+      nextContent.classList.remove('hidden');
+      nextContent.style.transform = 'translateX(0)';
+      nextContent.style.opacity = '1';
+      
+      setTimeout(() => {
+        nextContent.querySelectorAll('.section').forEach(section => {
+          requestAnimationFrame(() => {
+            section.classList.add('active');
+          });
+        });
+        isTransitioning = false;
+      }, 50);
+    }
   }
 
   // Add click handlers to language buttons
