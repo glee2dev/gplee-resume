@@ -6,7 +6,7 @@ body {
       color: #111;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       min-height: 100vh;
       overflow-x: hidden;
       line-height: 1.6;
@@ -22,6 +22,8 @@ body {
       opacity: 0;
       transform: translateY(20px);
       animation: fadeIn 0.8s ease forwards;
+      display: flex;
+      flex-direction: column;
     }
 
     @keyframes fadeIn {
@@ -83,6 +85,61 @@ body {
       border-bottom: 1px solid #111;
     }
 
+    /* Language Toggle Styles */
+    .language-tabs {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tab-button {
+      padding: 8px 16px;
+      border: 1px solid #eee;
+      background: transparent;
+      color: #666;
+      cursor: pointer;
+      border-radius: 20px;
+      font-size: 0.9em;
+      transition: all 0.3s ease;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .tab-button:hover {
+      background: #f8f8f8;
+      color: #000;
+    }
+
+    .tab-button.active {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+    }
+
+    /* Content Wrapper */
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      min-height: 0;
+      position: relative;
+    }
+
+    /* Resume Content Styles */
+    .resume-content {
+      grid-row: 1;
+      grid-column: 1;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .resume-content.hidden {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      pointer-events: none;
+    }
+
     .section {
       margin-bottom: 40px;
       opacity: 0;
@@ -128,10 +185,23 @@ body {
       margin-bottom: 3px;
     }
 
+    .location {
+      font-size: 0.9em;
+      color: #666;
+      margin-bottom: 3px;
+    }
+
     .duration {
       font-size: 0.9em;
       color: #666;
       margin-bottom: 8px;
+      display: block;
+    }
+
+    .sub-duration {
+      font-size: 0.85em;
+      color: #888;
+      margin: -5px 0 8px 0;
       display: block;
     }
 
@@ -178,11 +248,15 @@ body {
       line-height: 1.5;
     }
 
-    .contact-links {
-      text-align: center;
+    /* Footer Styles */
+    footer {
       margin-top: 40px;
       padding-top: 20px;
       border-top: 1px solid #f0f0f0;
+    }
+
+    .contact-links {
+      text-align: center;
     }
 
     .contact-links a {

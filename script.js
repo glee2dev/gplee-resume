@@ -1,53 +1,73 @@
-document.addEventListener('DOMContentLoaded', function() {
-      const progressBar = document.querySelector('.progress-bar');
-      const sections = document.querySelectorAll('.section');
-      let isScrolling;
-
-      function updateProgressBar() {
-        const scrollY = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
-        const maxScroll = documentHeight - windowHeight;
-        const scrollPercentage = Math.min((scrollY / maxScroll), 1);
-
-        progressBar.style.transform = `scaleX(${scrollPercentage})`;
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize sections animation
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
       }
-
-      function checkSectionVisibility() {
-        sections.forEach((section, index) => {
-          const rect = section.getBoundingClientRect();
-          const isVisible = (rect.top <= window.innerHeight * 0.8);
-
-          if (isVisible) {
-            setTimeout(() => {
-              section.classList.add('active');
-            }, index * 100);
-          }
-        });
-      }
-
-      function onScroll() {
-        window.clearTimeout(isScrolling);
-        
-        updateProgressBar();
-        checkSectionVisibility();
-
-        isScrolling = setTimeout(() => {
-          progressBar.style.transition = 'transform 0.3s ease';
-        }, 100);
-      }
-
-      window.addEventListener('scroll', onScroll, { passive: true });
-      
-      // Initial check
-      updateProgressBar();
-      checkSectionVisibility();
-
-      // Add hover effect to experience items
-      const experienceItems = document.querySelectorAll('.experience-item, .education-item');
-      experienceItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-          item.style.transition = 'transform 0.3s ease';
-        });
-      });
     });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+
+  // Progress bar functionality
+  const progressBar = document.querySelector('.progress-bar');
+  window.addEventListener('scroll', () => {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.scrollY;
+    const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
+    progressBar.style.transform = `scaleX(${progress / 100})`;
+  });
+
+  // Language switching functionality
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const resumeContents = document.querySelectorAll('.resume-content');
+
+  function switchLanguage(lang) {
+    // Update button states
+    tabButtons.forEach(button => {
+      button.classList.toggle('active', button.dataset.lang === lang);
+    });
+
+    // Reset scroll position
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // First hide all content
+    resumeContents.forEach(content => {
+      content.classList.add('hidden');
+    });
+
+    // Then show the selected content after a small delay
+    setTimeout(() => {
+      resumeContents.forEach(content => {
+        if (content.dataset.lang === lang) {
+          content.classList.remove('hidden');
+          // Re-trigger section animations
+          content.querySelectorAll('.section').forEach(section => {
+            section.classList.remove('active');
+            requestAnimationFrame(() => {
+              section.classList.add('active');
+            });
+          });
+        }
+      });
+    }, 300); // Delay matches CSS transition duration
+  }
+
+  // Add click handlers to language buttons
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const lang = button.dataset.lang;
+      if (!button.classList.contains('active')) {
+        switchLanguage(lang);
+      }
+    });
+  });
+
+  // Initialize with English version
+  switchLanguage('en');
+});
