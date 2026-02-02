@@ -12,7 +12,7 @@
   <div class="container">
     <header>
       <h1>이건표 Gyunpyo Lee</h1>
-      <p>Data Scientist</p>
+      <p>AI/ML Engineer</p>
       <div class="contact-info">
         <p>+82.10.4482.2730 | <a href="mailto:gyunpyolee@gmail.com">gyunpyolee@gmail.com</a> | <a href="https://linkedin.com/in/gple2/" target="_blank">linkedin.com/in/gple2/</a></p>
       </div>
@@ -27,41 +27,45 @@
       <section class="resume-content" data-lang="en">
         <div class="section">
           <h2>Professional Summary</h2>
-          <p>Data scientist with expertise in AI-driven customer analytics, predictive modeling, and synthetic data generation. Experience in consumer electronics, automotive design, and industrial AI, specializing in large-scale data processing, machine learning model development, and data-driven UX research. Passionate about leveraging AI to optimize business strategies and enhance user experiences.</p>
+          <p>AI/ML engineer with 7+ years of experience spanning automotive design, data science, and AI product development. Proven track record of leading PoC-to-production cycles, building predictive models (83-98% accuracy), and deploying MLOps pipelines. Expertise in generative AI (RAG, multi-agent systems), computer vision, synthetic data generation, and balancing technical feasibility with business impact. Published 12 papers including CVPR and IEEE Access.</p>
         </div>
         <div class="section">
           <h2>Experience</h2>
           <div class="experience-item">
-            <h3>Data Scientist</h3>
+            <h3>Senior Data Scientist</h3>
             <p class="company">LG Electronics</p>
             <p class="location">CX Center, Seoul, South Korea</p>
             <p class="duration">Nov 2022 - Present</p>
             <ul>
-              <li>Developed data-driven business insights from large-scale customer surveys.</li>
-              <li>Analyzed 20,000+ respondents' data across South Korea, the U.S., and Vietnam, covering 2,500+ variables.</li>
-              <li>Structured survey data into a JSON-based non-relational database for scalable business intelligence.</li>
-              <li>Built customer segmentation and purchase prediction models.</li>
-              <li>Developed an RFM-based clustering model and applied Random Forest & LightGBM, achieving 83% accuracy in purchase predictions.</li>
-              <li>Provided customer behavior insights for targeted marketing strategies.</li>
-              <li>Created AI models for life-event forecasting.</li>
-              <li>Built Sequential AI models with 87% accuracy in predicting life events (education, job changes, relocations).</li>
-              <li>Delivered data-driven insights for customer experience research strategy.</li>
-              <li>Analyzed real-time sales data from 3 retail stores in Seoul to evaluate marketing effectiveness.</li>
+              <li><b>CLUE Insight Ecosystem (2023-Present):</b> Led end-to-end AI product development from PoC to production deployment.</li>
+              <li>Analyzed 26,000 respondents across South Korea, the U.S., and Vietnam, covering 3,500+ variables (purchase history, life events, customer preferences, demographics).</li>
+              <li>Structured survey data into JSON-based non-relational database for scalable business intelligence.</li>
+              <li>Built RFM clustering + LightGBM purchase prediction model achieving 83% accuracy (Precision 85%, Recall 80%, K-fold cross-validated).</li>
+              <li>Developed LSTM life-event forecasting model with 87% accuracy predicting major life changes (education, job changes, relocations).</li>
+              <li>Delivered data-driven insights for customer experience research and targeted marketing strategies.</li>
+              <li><b>Generative AI Implementation (2024-2025):</b></li>
+              <li>Built Azure OpenAI embedding pipeline processing 26,000 × 3,500+ variables with FAISS vector indexing.</li>
+              <li>Designed LangChain-based 5-agent system (Router + 4 specialized sub-agents) for automated data analysis.</li>
+              <li>Conducted A/B testing revealing LLM hallucination issues in numerical computations. Made critical pivot decision: "Data analysis in Python, LLM as interface only."</li>
+              <li>Rebuilt system using Azure Code Interpreter + Streamlit, successfully deploying service for 10-person team.</li>
+              <li>Researched latest generative AI trends (GPT-4, Claude, RAG vs Fine-tuning tradeoffs, multimodal AI).</li>
+              <li>Analyzed real-time sales data from 3 retail stores in Seoul to evaluate marketing effectiveness (cross-team collaboration).</li>
             </ul>
           </div>
           <div class="experience-item">
             <h3>AI Consultant</h3>
             <p class="company">Code V</p>
             <p class="location">Seoul, South Korea</p>
-            <p class="duration">Mar 2022 - Dec 2023</p>
+            <p class="duration">Mar 2022 - Dec 2024</p>
             <ul>
-              <li>Developed AI-powered seafood classification models.</li>
+              <li><b>Seafood Quality Inspection AI:</b> Led 6-month project managing data collection, model development, and deployment.</li>
               <li>Automated defect detection for three seafood categories (fishcake, seaweed, oysters).</li>
-              <li>Achieved 98% precision and an mAP 50 score of 87% across all categories.</li>
-              <li>Addressed long-tail problem in food classification.</li>
-              <li>Designed custom augmentation strategies to improve accuracy in rare defect patterns.</li>
-              <li>Optimized spectral data pipelines for AI inference.</li>
-              <li>Preprocessed spectral datasets for custom ANN models, ensuring seamless model integration.</li>
+              <li>Coordinated with manufacturers and data collection vendors to acquire 5,000+ images from production facilities.</li>
+              <li>Addressed long-tail problem through custom augmentation strategies (color transformation, texture variation).</li>
+              <li>Fine-tuned YOLOv5 with hyperparameter optimization, achieving 98% precision and mAP 50 score of 87%.</li>
+              <li>Optimized for edge deployment with model quantization and TensorRT conversion.</li>
+              <li>Customized solutions for each category's production environment (lighting, surface reflection, irregular shapes).</li>
+              <li><b>Spectral Data AI:</b> Preprocessed spectral datasets and developed custom ANN models for seamless inference integration.</li>
             </ul>
           </div>
           <div class="experience-item">
@@ -70,9 +74,11 @@
             <p class="location">Daejeon, South Korea</p>
             <p class="duration">Jul 2022 - Oct 2022</p>
             <ul>
-              <li>Led the development of synthetic data generation pipelines and oversee on AI data structuring & 3D dataset validation.</li>
-              <li>Focused on data-scarce industries (e.g., MTMC tracking, manufacturing) to enable AI model training with synthetic data 3D modeling.</li>
-              <li>Developed digital twin environments using Unreal Engine & Blender to generate synthetic datasets.</li>
+              <li>Led synthetic data generation pipeline development for data-scarce industries (MTMC tracking, manufacturing defect inspection).</li>
+              <li>Built digital twin environments using Unreal Engine & Blender for AI training data generation.</li>
+              <li>Generated diverse scenarios (weather, lighting, camera angles, object movements) with automatic ground truth labeling.</li>
+              <li>Conducted domain gap analysis between synthetic and real-world data distributions.</li>
+              <li>Established AI data structuring methodology and 3D dataset validation processes.</li>
             </ul>
           </div>
           <div class="experience-item">
@@ -82,18 +88,18 @@
             <p class="duration">Sep 2020 - Aug 2022</p>
             <ul>
               <li><b>Kia Design Center | PBV Vehicle Active Lighting Research</b></li>
-              <li>Designed PBV vehicle interior lighting content and scenario boards.</li>
-              <li>Conducted VR-based lighting UX tests for immersive experiences.</li>
-              <li>Developed projection lighting scenarios & validated user feedback.</li>
-              <li>Interviewed Kia designers to create lighting scenarios aligned with 'Opposite United' philosophy.</li>
+              <li>Designed interior lighting scenarios using Unity + Projection Mapping for immersive experiences.</li>
+              <li>Tested 50+ lighting pattern combinations (color temperature, brightness, patterns) for different use cases.</li>
+              <li>Aligned scenarios with Kia's 'Opposite United' design philosophy through designer interviews.</li>
               <br>
               <li><b>LS Automotive | Affective Lighting Research</b></li>
-              <li>Designed user-driven automotive emotional lighting scenarios.</li>
-              <li>Conducted EEG-based biometric testing for affective lighting validation.</li>
+              <li>Conducted EEG-based biometric testing with 40 participants (20 male, 20 female) to measure emotional responses to automotive lighting.</li>
+              <li>Integrated quantitative biometric data (heart rate, skin conductance) with qualitative surveys.</li>
+              <li>Validated findings using ANOVA and t-test statistical methods.</li>
               <br>
               <li><b>KAIST | Infection Control Hospital UX Research</b></li>
-              <li>Designed visual information and wayfinding solutions for infectious disease hospitals.</li>
-              <li>Contributed to the development of design guidelines and real-world testing.</li>
+              <li>Designed wayfinding systems for patient/staff separation in infectious disease hospitals.</li>
+              <li>Developed design guidelines through medical staff feedback and real-world testing.</li>
             </ul>
           </div>
           <div class="experience-item">
@@ -102,13 +108,12 @@
             <p class="location">Turin, Italy</p>
             <p class="duration">Feb 2016 - Dec 2019</p>
             <ul>
-              <li>Key designer in Changan's first platform-based vehicle (UNI-V).</li>
-              <li>Led exterior design refinement & communication between CAD and CLAY modeling teams.</li>
-              <li>Developed facelift models for production sedans (C301 / C201).</li>
-              <li>Designed Eado XT (C211) concept sketches featured in Auto & Design 2018 cover.</li>
-              <li>Contributed to Jiliu Concept (Shanghai Auto Show 2017) exterior design.</li>
-              <li>Provided concept design ideas for Yuyue Concept (Shanghai Auto Show 2017).</li>
-              <li>Contributed to Changan's branding, platform-based vehicle concepts, and future UX design.</li>
+              <li>Key designer in Changan's first platform-based vehicle (UNI-V), leading exterior design refinement.</li>
+              <li>Coordinated between CAD and Clay modeling teams using Autodesk Alias 3D CAD and Vred PBR rendering.</li>
+              <li>Developed facelift models for production sedans (C301 / C201) based on competitive benchmarking (Geely, Dongfeng, Hyundai, Kia, Toyota, Honda).</li>
+              <li>Designed Eado XT (C211) concept featured on Auto & Design 2018 cover.</li>
+              <li>Contributed to Jiliu Concept and Yuyue Concept (Shanghai Auto Show 2017).</li>
+              <li>Participated in brand strategy development and future autonomous vehicle UX research.</li>
             </ul>
           </div>
         </div>
@@ -119,6 +124,7 @@
             <p class="university">Korea Advanced Institute of Science and Technology (KAIST)</p>
             <p class="location">Daejeon, South Korea</p>
             <p class="duration">Aug 2020 - Aug 2022</p>
+            <p class="sub-duration">Thesis: Deep Learning-based Exploration of Automotive Exterior Design Elements</p>
           </div>
           <div class="education-item">
             <h3>Bachelor of Fine Arts (BFA) in Transportation Design</h3>
@@ -133,10 +139,12 @@
             <div class="skills">
               <h3>Skills</h3>
               <ul class="skills-list">
-                <li>Machine Learning & AI: Python, PyTorch, TensorFlow, Scikit-Learn, OpenCV</li>
-                <li>Data Science & Analytics: SQL, Pandas, NumPy, Tableau, ggplot, seaborn</li>
-                <li>Computer Vision & Spectral Analysis: ANN models, Spectral Data Preprocessing, mAP Metrics</li>
-                <li>Automotive & Industrial Design: Adobe Photoshop, Illustrator, Autodesk Alias, Blender, Keyshot</li>
+                <li><b>Generative AI & LLM:</b> Azure OpenAI (GPT-4, text-embedding), Claude API, LangChain, RAG pipelines</li>
+                <li><b>Machine Learning:</b> PyTorch, TensorFlow, Scikit-Learn, LightGBM, XGBoost</li>
+                <li><b>Computer Vision:</b> YOLOv5, OpenCV, Synthetic Data (Unreal Engine, Blender)</li>
+                <li><b>MLOps & Deployment:</b> Azure ML Studio, Streamlit, FastAPI, Docker</li>
+                <li><b>Data Science:</b> Python, SQL, Pandas, NumPy, Tableau, FAISS vector database</li>
+                <li><b>Design Tools:</b> Autodesk Alias, Photoshop, Illustrator, Blender, Unity</li>
               </ul>
             </div>
             <div class="languages">
@@ -211,42 +219,45 @@
       <section class="resume-content hidden" data-lang="ko">
         <div class="section">
           <h2>요약</h2>
-          <p>데이터 사이언티스트로서 AI 기반 고객 분석, 예측 모델링, 및 Synthetic Data 생성에 대한 전문성을 보유.
-            가전, 자동차 디자인 및 산업 AI 분야에서 대규모 데이터 처리, 머신 러닝 모델 개발, 데이터 기반 UX 연구 수행.
-            AI를 활용하여 비즈니스 전략 최적화 및 사용자 경험 개선을 목표로 데이터 활용을 극대화하는 솔루션을 구축.</p>
+          <p>AI/ML 엔지니어로서 자동차 디자인, 데이터 사이언스, AI 제품 개발 분야에서 7년 이상의 경험 보유. PoC부터 프로덕션까지 전체 사이클 주도 경험, 예측 모델 개발(83-98% 정확도), MLOps 파이프라인 배포 실적. 생성형 AI(RAG, Multi-agent), Computer Vision, Synthetic Data 생성 전문성 보유. 기술적 가능성과 비즈니스 임팩트의 균형을 맞추는 역량. CVPR, IEEE Access 포함 12편 논문 게재.</p>
         </div>
         <div class="section">
           <h2>경력</h2>
           <div class="experience-item">
-            <h3>데이터 사이언티스트</h3>
+            <h3>선임 데이터 사이언티스트</h3>
             <p class="company">LG전자</p>
             <p class="location">CX Center, 서울, 대한민국</p>
             <p class="duration">2022년 11월 - 현재</p>
             <ul>
-              <li>대규모 고객 설문 데이터를 활용한 비즈니스 인사이트 개발.</li>
-              <li>한국, 미국, 베트남 20,000명 이상의 응답자 데이터를 분석하여 2,500개 이상의 변수(구매 이력, 라이프 이벤트, 고객 성향 등) 정리 및 분석.</li>
-              <li>JSON 기반 비정형 데이터베이스 구축, 데이터 저장 및 분석 효율성 향상.</li>
-              <li>고객 세분화 및 구매 예측 모델 구축.</li>
-              <li>RFM 기반 클러스터링 모델 개발, Random Forest 및 LightGBM을 적용하여 83%의 예측 정확도 달성.</li>
-              <li>고객 행동 분석을 통한 맞춤형 마케팅 전략 수립 지원.</li>
-              <li>고객 라이프 이벤트 예측 AI 모델 개발.</li>
-              <li>Sequential AI 모델을 활용해 87%의 예측 정확도로 라이프 이벤트(교육, 이직, 이사) 예측.</li>
-              <li>CX 연구 전략 보고 및 데이터 기반 인사이트 제공.</li>
-              <li>서울 3개 매장의 실시간 판매 데이터 분석을 수행하여 마케팅 효과 평가.</li>
+              <li><b>CLUE Insight Ecosystem (2023-현재):</b> PoC부터 프로덕션 배포까지 전체 AI 제품 개발 사이클 주도.</li>
+              <li>한국, 미국, 베트남 26,000명 응답자 데이터 분석, 3,500개 이상의 변수(구매 이력, 라이프 이벤트, 고객 성향, 인구통계) 처리.</li>
+              <li>JSON 기반 비정형 데이터베이스 구축으로 확장 가능한 비즈니스 인텔리전스 시스템 설계.</li>
+              <li>RFM 클러스터링 + LightGBM 구매 예측 모델 개발, 83% 정확도 달성 (Precision 85%, Recall 80%, K-fold 교차검증).</li>
+              <li>LSTM 기반 라이프 이벤트 예측 모델 개발, 87% 정확도로 주요 생활 변화(교육, 이직, 이사) 예측.</li>
+              <li>고객 경험 연구 및 타겟 마케팅 전략을 위한 데이터 기반 인사이트 제공.</li>
+              <li><b>생성형 AI 구현 (2024-2025):</b></li>
+              <li>Azure OpenAI 임베딩 파이프라인 구축, 26,000 × 3,500+ 변수 처리 및 FAISS 벡터 인덱싱.</li>
+              <li>LangChain 기반 5개 에이전트 시스템 설계 (Router + 4개 전문 Sub-agent)로 데이터 분석 자동화.</li>
+              <li>A/B 테스팅 결과 LLM의 수치 계산 환각 문제 발견. 핵심 피봇 결정: "데이터 분석은 Python으로, LLM은 인터페이스로만".</li>
+              <li>Azure Code Interpreter + Streamlit 기반 시스템 재구축, 10명 팀 실사용 서비스 성공적 배포.</li>
+              <li>최신 생성형 AI 트렌드 연구 (GPT-4, Claude, RAG vs Fine-tuning 트레이드오프, Multimodal AI).</li>
+              <li>서울 3개 매장 실시간 판매 데이터 분석으로 마케팅 효과 평가 (부서 간 협업).</li>
             </ul>
           </div>
           <div class="experience-item">
             <h3>AI 컨설턴트</h3>
             <p class="company">Code V</p>
             <p class="location">서울, 대한민국</p>
-            <p class="duration">2022년 3월 - 2023년 12월</p>
+            <p class="duration">2022년 3월 - 2024년 12월</p>
             <ul>
-              <li>해산물 품질 검사 AI 모델 개발.</li>
-              <li>어묵, 미역, 굴 등 3개 카테고리에 대한 불량 탐지 모델 개발, Precision 98%, mAP 50 87% 성능 달성.</li>
-              <li>Long-Tail Problem 해결 및 데이터 증강 기법 적용.</li>
-              <li>희귀 불량 패턴의 예측 정확도를 높이기 위해 Custom Augmentation Strategies 설계.</li>
-              <li>Spectral Data 기반 AI 모델 최적화.</li>
-              <li>Spectral Dataset을 전처리하여 Custom ANN 모델 개발 및 AI 추론 모델 최적화.</li>
+              <li><b>해산물 품질 검사 AI:</b> 6개월 프로젝트 일정 관리, 데이터 수집, 모델 개발, 배포 전 과정 주도.</li>
+              <li>어묵, 미역, 굴 등 3개 카테고리 불량 탐지 자동화.</li>
+              <li>제조업체, 데이터 촬영 외주 업체와 협업하여 제조 현장 5,000+ 이미지 확보.</li>
+              <li>Long-Tail 문제 해결을 위한 Custom Augmentation 전략 설계 (색상 변환, 텍스처 변형).</li>
+              <li>YOLOv5 Fine-tuning 및 하이퍼파라미터 최적화, Precision 98%, mAP 50 87% 성능 달성.</li>
+              <li>모델 경량화 및 TensorRT 변환으로 엣지 디바이스 배포 최적화.</li>
+              <li>각 카테고리별 제조 환경 맞춤 솔루션 개발 (조명, 표면 반사, 불규칙 형태).</li>
+              <li><b>Spectral Data AI:</b> Spectral Dataset 전처리 및 Custom ANN 모델 개발, 원활한 추론 통합.</li>
             </ul>
           </div>
           <div class="experience-item">
@@ -255,9 +266,11 @@
             <p class="location">대전, 대한민국</p>
             <p class="duration">2022년 7월 - 2022년 10월</p>
             <ul>
-              <li>Synthetic Data 기반 AI 솔루션 기획 및 개발.</li>
-              <li>데이터 확보가 어려운 산업(예: MTMC 추적, 제조업) 타겟으로 Synthetic Data 활용 전략 수립.</li>
-              <li>Unreal Engine, Blender 기반 Digital Twin 환경을 활용한 AI 학습 데이터 생성.</li>
+              <li>데이터 확보가 어려운 산업(MTMC 추적, 제조 불량 검사)을 위한 Synthetic Data 생성 파이프라인 개발 주도.</li>
+              <li>Unreal Engine과 Blender를 활용한 Digital Twin 환경 구축, AI 학습 데이터 생성.</li>
+              <li>다양한 시나리오 생성(날씨, 조명, 카메라 각도, 객체 움직임) 및 자동 Ground Truth 라벨링.</li>
+              <li>Synthetic Data와 실제 데이터 간 Domain Gap 분석 수행.</li>
+              <li>AI 데이터 구조화 방법론 및 3D 데이터셋 검증 프로세스 확립.</li>
             </ul>
           </div>
           <div class="experience-item">
@@ -267,18 +280,18 @@
             <p class="duration">2020년 9월 - 2022년 8월</p>
             <ul>
               <li><b>기아디자인센터 | PBV 차량 액티브 라이팅 연구</b></li>
-              <li>PBV 차량 실내 조명 컨텐츠 및 시나리오 보드 연구 및 개발.</li>
-              <li>VR 기반 조명 UX 테스트를 통한 몰입형 사용자 경험 연구.</li>
-              <li>프로젝션 조명 시나리오 제작 및 사용자 피드백 검증.</li>
-              <li>기아자동차 'Opposite United' 디자인 철학을 반영한 조명 시나리오 연구.</li>
+              <li>Unity + Projection Mapping 기반 실내 조명 시나리오 설계, 몰입형 경험 구현.</li>
+              <li>다양한 사용 상황에 맞춘 50+ 조명 패턴 조합 테스트 (색온도, 밝기, 패턴).</li>
+              <li>기아자동차 'Opposite United' 디자인 철학 반영, 디자이너 인터뷰 진행.</li>
               <br>
               <li><b>LS Automotive | 감성 조명 연구</b></li>
-              <li>차량 내 사용자 감성 조명 시나리오 설계 및 UX 연구.</li>
-              <li>EEG(뇌파 분석) 기반 생체 데이터 실험을 통한 감성 조명 디자인 평가.</li>
+              <li>40명 피험자(남성 20명, 여성 20명) 대상 EEG 기반 생체 데이터 실험, 자동차 조명에 대한 감정 반응 측정.</li>
+              <li>정량적 생체 데이터(심박수, 피부 전도도)와 정성적 설문 조사 통합 분석.</li>
+              <li>ANOVA, t-test 통계 기법으로 연구 결과 검증.</li>
               <br>
               <li><b>KAIST | 감염병원 UX 연구</b></li>
-              <li>감염병 병원 환경에서 효율적인 동선 유도를 위한 시각 정보 디자인 개발.</li>
-              <li>디자인 가이드라인 제작 및 실제 환경에서의 검증 참여.</li>
+              <li>감염병 병원 환자/의료진 분리를 위한 동선 유도 시스템 설계.</li>
+              <li>의료진 피드백 및 실제 환경 테스트를 통한 디자인 가이드라인 개발.</li>
             </ul>
           </div>
           <div class="experience-item">
@@ -287,13 +300,12 @@
             <p class="location">토리노, 이탈리아</p>
             <p class="duration">2016년 2월 - 2019년 12월</p>
             <ul>
-              <li>Changan 최초의 플랫폼형 차량(UNI-V) 디자인 개발 주도.</li>
-              <li>CAD 및 CLAY 모델링 팀과 협업을 통해 디자인 구체화 및 가이드라인 개발.</li>
-              <li>생산 세단(C301 / C201) 부분 변경 모델 디자인 개발.</li>
+              <li>Changan 최초 플랫폼형 차량(UNI-V) 핵심 디자이너, 외장 디자인 구체화 주도.</li>
+              <li>CAD 및 Clay 모델링 팀 간 협업 조율, Autodesk Alias 3D CAD와 Vred PBR 렌더링 활용.</li>
+              <li>생산 세단(C301 / C201) 페이스리프트 모델 개발, 경쟁 차량 벤치마킹 (지리, 동펑, 현대, 기아, 도요타, 혼다).</li>
               <li>Eado XT (C211) 컨셉 디자인 개발, Auto & Design 2018 표지 게재.</li>
-              <li>Jiliu Concept (2017 상하이 오토쇼) 외장 디자인 기여.</li>
-              <li>Yuyue Concept (2017 상하이 오토쇼) 인테리어 디자인 아이디어 제공.</li>
-              <li>브랜딩 전략 및 미래 UX 디자인 개발 프로젝트 참여.</li>
+              <li>Jiliu Concept, Yuyue Concept (2017 상하이 오토쇼) 기여.</li>
+              <li>브랜드 전략 개발 및 미래 자율주행 차량 UX 연구 참여.</li>
             </ul>
           </div>
         </div>
@@ -304,6 +316,7 @@
             <p class="university">KAIST (한국과학기술원)</p>
             <p class="location">대전, 대한민국</p>
             <p class="duration">2020년 8월 - 2022년 8월</p>
+            <p class="sub-duration">학위논문: 딥러닝 기반 자동차 외장 디자인 요소 탐색</p>
           </div>
           <div class="education-item">
             <h3>운송디자인 학사</h3>
@@ -318,10 +331,12 @@
             <div class="skills">
               <h3>기술</h3>
               <ul class="skills-list">
-                <li>Machine Learning & AI: Python, PyTorch, TensorFlow, Scikit-Learn, OpenCV</li>
-                <li>Data Science & Analytics: SQL, Pandas, NumPy, Tableau, ggplot, seaborn</li>
-                <li>Computer Vision & Spectral Analysis: ANN models, Spectral Data Preprocessing, mAP Metrics</li>
-                <li>Automotive & Industrial Design: Adobe Photoshop, Illustrator, Autodesk Alias, Blender, Keyshot</li>
+                <li><b>생성형 AI & LLM:</b> Azure OpenAI (GPT-4, text-embedding), Claude API, LangChain, RAG 파이프라인</li>
+                <li><b>Machine Learning:</b> PyTorch, TensorFlow, Scikit-Learn, LightGBM, XGBoost</li>
+                <li><b>Computer Vision:</b> YOLOv5, OpenCV, Synthetic Data (Unreal Engine, Blender)</li>
+                <li><b>MLOps & Deployment:</b> Azure ML Studio, Streamlit, FastAPI, Docker</li>
+                <li><b>Data Science:</b> Python, SQL, Pandas, NumPy, Tableau, FAISS 벡터 데이터베이스</li>
+                <li><b>Design Tools:</b> Autodesk Alias, Photoshop, Illustrator, Blender, Unity</li>
               </ul>
             </div>
             <div class="languages">
