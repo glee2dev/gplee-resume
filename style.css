@@ -208,6 +208,17 @@ header p {
   display: block;
 }
 
+.project-title {
+  font-size: 0.95em;
+  color: #333;
+  margin: 15px 0 8px 0;
+  font-weight: 500;
+}
+
+.project-title:first-of-type {
+  margin-top: 12px;
+}
+
 .sub-duration {
   font-size: 0.85em;
   color: #888;
@@ -535,6 +546,13 @@ footer {
   .sub-duration {
     font-size: 9pt;
     color: #555;
+  }
+
+  .project-title {
+    font-size: 10pt;
+    font-weight: 600;
+    color: #000;
+    margin: 10pt 0 6pt 0;
   }
 
   /* Lists for print */
